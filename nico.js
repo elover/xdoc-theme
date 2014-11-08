@@ -5,6 +5,8 @@ exports.package = pkg;
 // {{ settings for nico
 exports.theme = __dirname
 exports.source = process.cwd()
+console.log(__dirname)
+console.log(process.cwd())
 exports.output = path.join(process.cwd(), '_site')
 exports.permalink = '{{directory}}/{{filename}}.html'
 if (pkg.family === 'arale') {
