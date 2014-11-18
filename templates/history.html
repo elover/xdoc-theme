@@ -11,7 +11,7 @@
   </div>
 </article>
 <script>
-seajs.use('$', function($) {
+    ;(function($) {
     $('#content code').each(function(index, item) {
         item = $(item);
         var matcher = item.html().match(/^(tag:)?(NEW|FIXED|IMPROVED|CHANGED|UNRESOLVED)/i);
@@ -20,7 +20,7 @@ seajs.use('$', function($) {
             item.replaceWith('<span class="history-tag history-tag-'+matcher[2].toLowerCase()+'">'+matcher[2]+'</span>');
         }
     });
-});
+})(window.jQuery);
 </script>
 <style>
 #content p {

@@ -34,6 +34,7 @@ exports.writers = [
 // end settings }}
 
 // extends for theme usage, that can be accessable by {{config.xxx}}
+//todo 后期修改为互秀的
 exports.assets_host = 'http://assets.spmjs.org';
 
 exports.filters = {}
