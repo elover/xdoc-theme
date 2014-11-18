@@ -1,4 +1,4 @@
-seajs.use(['$'], function($) {
+//seajs.use(['$'], function($) {
 
   $(function(){
     $('.highlight').on('click', '.code-toggle', function() {
@@ -30,90 +30,90 @@ seajs.use(['$'], function($) {
     });
   });
 
-});
+//});
 
-seajs.use(['$', 'arale/popup/1.1.6/popup', 'gallery/underscore/1.5.2/underscore'], function($, Popup, _) {
+//seajs.use(['$', 'arale/popup/1.1.6/popup', 'gallery/underscore/1.5.2/underscore'], function($, Popup, _) {
 
-  if ($('#sidebar-wrapper').length === 0) {
-    return;
-  }
-
-  var family = $('#sidebar-wrapper h1 sup a').html();
-  var name = $('#sidebar-wrapper h1 > a').html();
-  name = (name || '').toLowerCase();
-  var version = $('#sidebar-wrapper .version a').html();
-  version = (version || '').toLowerCase();
-
-  new Popup({
-    trigger: '#maintainers',
-    template: '<div class="popup-install">强烈建议提交 issue 交流（点击上方[讨论]），您会得到更高质量的反馈。</div>',
-    effect: 'fade',
-    width: 210,
-    align: {
-      baseXY: [0, '100%+5']
-    }
-  });
-
-  // output card
-  if ($('#module-output')[0] && Popup) {
-    new Popup({
-      trigger: '#module-output li a',
-      element: '#output-card',
-      effect: 'fade',
-      beforeShow: function() {
-        var file = this.activeTrigger.data('file');
-        file = file.replace('./', '').replace('.js', '');
-        this.element.find('#output-file').html(file)
-        .attr('href', this.activeTrigger.attr('href'));
-      }
-    });
-  }
-
-  // 本地调试时直接返回
-  if (location.port) {
-    return;
-  }
-
-  // version document link
-  var versionJsonLink,
-    versionDocLink, lastestLink;
-  // for alipay inside develop
-  if (location.href.indexOf('alipay.im') >= 0) {
-    spmLink =  'http://yuan.alipay.im/'+family+'/'+name+'/'+version;
-    versionJsonLink = 'http://yuan.alipay.im/repository/'+family+'/'+name+'/?define';
-    versionDocLink = '/+/' + family +'/' + name + '/';
-    lastestLink = '/' + family +'/' + name + '/';
-  } else {
-    spmLink =  'https://spmjs.org/'+family+'/'+name+'/'+version;
-    versionJsonLink = 'https://spmjs.org/repository/' + family + '/' + name + '/?define';
-    versionDocLink = '/+/' + name + '/';
-    lastestLink = '/+/' + name + '/';
-  }
-  $('.version a').attr('href', spmLink);
-
-  seajs.use(versionJsonLink, function(package) {
-    if (!(package && package.packages)) return;
-
-    var versions = _.keys(package.packages);
-    versions = _.without(versions, version);
-
-    if (versions.length > 0) {
-      var template = '<ul class="other-versions">';
-      template += '<li class="other-versions-title"><a href="'+lastestLink+'">最新版本</a></li>';
-      for (var i=0; i<versions.length; i++) {
-        template += '<li><a href="' + versionDocLink + versions[i] +'/">'
-          + versions[i] + '</a></li>';
-      }
-      template += '</ul>';
-
-      new Popup({
-        trigger: '.version a',
-        template: template,
-        effect: 'fade',
-        align: {
-          baseXY: [0, '100%']
-        }
-      });
-    };
-  });
-});
+  //if ($('#sidebar-wrapper').length === 0) {
+  //  return;
+  //}
+  //
+  //var family = $('#sidebar-wrapper h1 sup a').html();
+  //var name = $('#sidebar-wrapper h1 > a').html();
+  //name = (name || '').toLowerCase();
+  //var version = $('#sidebar-wrapper .version a').html();
+  //version = (version || '').toLowerCase();
+  //
+  //new Popup({
+  //  trigger: '#maintainers',
+  //  template: '<div class="popup-install">强烈建议提交 issue 交流（点击上方[讨论]），您会得到更高质量的反馈。</div>',
+  //  effect: 'fade',
+  //  width: 210,
+  //  align: {
+  //    baseXY: [0, '100%+5']
+  //  }
+  //});
+  //
+  //// output card
+  //if ($('#module-output')[0] && Popup) {
+  //  new Popup({
+  //    trigger: '#module-output li a',
+  //    element: '#output-card',
+  //    effect: 'fade',
+  //    beforeShow: function() {
+  //      var file = this.activeTrigger.data('file');
+  //      file = file.replace('./', '').replace('.js', '');
+  //      this.element.find('#output-file').html(file)
+  //      .attr('href', this.activeTrigger.attr('href'));
+  //    }
+  //  });
+  //}
+  //
+  //// 本地调试时直接返回
+  //if (location.port) {
+  //  return;
+  //}
+  //
+  //// version document link
+  //var versionJsonLink,
+  //  versionDocLink, lastestLink;
+  //// for alipay inside develop
+  //if (location.href.indexOf('alipay.im') >= 0) {
+  //  spmLink =  'http://yuan.alipay.im/'+family+'/'+name+'/'+version;
+  //  versionJsonLink = 'http://yuan.alipay.im/repository/'+family+'/'+name+'/?define';
+  //  versionDocLink = '/+/' + family +'/' + name + '/';
+  //  lastestLink = '/' + family +'/' + name + '/';
+  //} else {
+  //  spmLink =  'https://spmjs.org/'+family+'/'+name+'/'+version;
+  //  versionJsonLink = 'https://spmjs.org/repository/' + family + '/' + name + '/?define';
+  //  versionDocLink = '/+/' + name + '/';
+  //  lastestLink = '/+/' + name + '/';
+  //}
+  //$('.version a').attr('href', spmLink);
+  //
+  //seajs.use(versionJsonLink, function(package) {
+  //  if (!(package && package.packages)) return;
+  //
+  //  var versions = _.keys(package.packages);
+  //  versions = _.without(versions, version);
+  //
+  //  if (versions.length > 0) {
+  //    var template = '<ul class="other-versions">';
+  //    template += '<li class="other-versions-title"><a href="'+lastestLink+'">最新版本</a></li>';
+  //    for (var i=0; i<versions.length; i++) {
+  //      template += '<li><a href="' + versionDocLink + versions[i] +'/">'
+  //        + versions[i] + '</a></li>';
+  //    }
+  //    template += '</ul>';
+  //
+  //    new Popup({
+  //      trigger: '.version a',
+  //      template: template,
+  //      effect: 'fade',
+  //      align: {
+  //        baseXY: [0, '100%']
+  //      }
+  //    });
+  //  };
+  //});
+//});
