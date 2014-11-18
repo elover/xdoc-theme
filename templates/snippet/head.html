@@ -139,6 +139,6 @@ jquery/jquery/1.7.2/jquery.js"></script>
 //  {%- endif %}
 //  })();
 </script>
-{%- for value in pkg.X.dependencies %}
+{%- for value in pkg.spm.dependencies %}
  <script src="{{content_url('')}}/{{value}}.js"></script>
 {%- endfor %}
