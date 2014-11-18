@@ -116,22 +116,4 @@ seajs.use(['$', 'arale/popup/1.1.6/popup', 'gallery/underscore/1.5.2/underscore'
       });
     };
   });
-
-  // google analytics
-  var project = $('#sidebar-wrapper h1 > a').text();
-  $('#footer-wrapper a').click(function() {
-    _gaq.push(['_trackEvent', 'Link', 'Footer', $(this).text()]);
-  });
-  $('.source').click(function() {
-    _gaq.push(['_trackEvent', 'Link', 'Button', project]);
-  });
-  $('a[href^="https://travis-ci.org/aralejs/"]').click(function() {
-    _gaq.push(['_trackEvent', 'Link', 'Travis', project]);
-  });
-  $('.test-link').click(function() {
-    _gaq.push(['_trackEvent', 'Link', 'Test', project]);
-  });
-  $('.issue-link').click(function() {
-    _gaq.push(['_trackEvent', 'Link', 'Issue', project]);
-  });
 });

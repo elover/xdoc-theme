@@ -4,16 +4,10 @@ exports.package = pkg;
 
 // {{ settings for nico
 exports.theme = __dirname
+console.log('theme:',__dirname)
 exports.source = process.cwd()
-console.log(__dirname)
-console.log(process.cwd())
 exports.output = path.join(process.cwd(), '_site')
 exports.permalink = '{{directory}}/{{filename}}.html'
-if (pkg.family === 'arale') {
-  exports.google = 'UA-36247332-1'
-} else if (pkg.family === 'alice') {
-  exports.google = 'UA-39169474-1'
-}
 exports.ignorefilter = function(filepath, subdir) {
   var extname = path.extname(filepath);
   if (extname === '.tmp' || extname === '.bak') {
