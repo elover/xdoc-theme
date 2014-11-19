@@ -5,6 +5,12 @@
 {% block content %}
 <article class="hentry">
   <h1 class="entry-title">{{post.title}}</h1>
+    <p class="entry-depend">
+        依赖模块：
+        {%- for item in config.package.spm.dependencies %}
+            <a href="{{ item }}">{{  loop.key }}</a>
+        {%- endfor %}
+    </p>
   <div class="entry-content">
     {{ post.html|replace_code|fixlink|add_anchor }}
   </div>
