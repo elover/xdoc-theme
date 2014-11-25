@@ -20,7 +20,7 @@ exports.ignorefilter = function (filepath, subdir) {
         /\.[md|html|psd|zip|yml]/.test(path.extname(filepath))) {
         return false;
     }
-    if (/^spm-modules/.test(subdir) &&
+    if (/^spm_modules/.test(subdir) &&
         /\.[md|html|psd|zip|yml]/.test(path.extname(filepath))) {
         return false;
     }
