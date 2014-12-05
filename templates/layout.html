@@ -59,7 +59,11 @@
     </aside>
     {%- block afterside %}{% endblock %}
     <div id="content-wrapper">
+        <!--处理依赖-->
         {%- for value in pkg.spm.dependencies %}
+        <script src="{{content_url('')}}{{value}}"></script>
+        {%- endfor %}
+        {%- for value in pkg.spm.devDependencies %}
         <script src="{{content_url('')}}{{value}}"></script>
         {%- endfor %}
         <script src="{{content_url('')}}{{pkg.spm.main}}"></script>
