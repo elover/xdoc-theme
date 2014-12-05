@@ -60,9 +60,9 @@
     {%- block afterside %}{% endblock %}
     <div id="content-wrapper">
         {%- for value in pkg.spm.dependencies %}
-        <script src="{{value}}"></script>
+        <script src="{{content_url('')}}{{value}}"></script>
         {%- endfor %}
-        <script src="{{pkg.spm.main}}"></script>
+        <script src="{{content_url('')}}{{pkg.spm.main}}"></script>
         <div id="content">{% block content %}{% endblock %}</div>
     </div>
     {%- endblock %}
