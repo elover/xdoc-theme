@@ -28,6 +28,10 @@ exports.ignorefilter = function (filepath, subdir) {
         /\.[md|html|psd|zip|yml]/.test(path.extname(filepath))) {
         return false;
     }
+    if (/\d+\.\d+\.\d+/.test(subdir) &&
+        /\.[md|html|psd|zip|yml]/.test(path.extname(filepath))) {
+        return false;
+    }
     if (/^(_site|_theme|node_modules|\.idea)/.test(subdir)) {
         return false;
     }
@@ -38,14 +42,14 @@ exports.writers = [
     'nico.StaticWriter',
     'nico.FileWriter',
     'nico.MochaWriter'
-]
+];
 // end settings }}
 
 // extends for theme usage, that can be accessable by {{config.xxx}}
 //todo 后期修改为互秀的
 exports.assets_host = 'http://assets.spmjs.org';
 
-exports.filters = {}
+exports.filters = {};
 
 exports.isCssModule = (function () {
     // 名称若恰好为 stylib
@@ -63,4 +67,4 @@ exports.isCssModule = (function () {
         return true
     }
     return true
-})()
+})();
