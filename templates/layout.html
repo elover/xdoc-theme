@@ -7,14 +7,15 @@
     <meta name="generator" content="{{system.name}} {{system.version}}"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {%- block assets %}
-    <link type="image/x-icon" href="{{static_url('css/favicon.ico')}}" rel="icon">
-    <link rel="stylesheet" href="{{static_url('css/normalize.css')}}"/>
-    <link rel="stylesheet" href="{{static_url('css/site.css')}}"/>
-    <link rel="stylesheet" href="{{static_url('css/solarized.css')}}"/>
-    <script src="{{static_url('js/jquery-1.11.0.js')}}"></script>
+    <link type="image/x-icon" href=/static/css/favicon.ico rel="icon">
+    <link rel="stylesheet" href=/static/css/normalize.css>
+    <link rel="stylesheet" href=/static/css/site.css>
+    <link rel="stylesheet" href=/static/css/solarized.css>
+    <script src=/static/js/jquery-1.11.0.js></script>
+    <script src=/static/js/require.js></script>
     {%- include "snippet/head.html" %}
     <!--[if lt IE 9]>
-    <script src="{{static_url('js/html5shiv.js')}}"></script>
+    <script src=/static/js/html5shiv.js></script>
     <![endif]-->
     {%- endblock %}
     {%- block afterstyle %}{% endblock %}
@@ -59,14 +60,6 @@
     </aside>
     {%- block afterside %}{% endblock %}
     <div id="content-wrapper">
-        <!--处理依赖-->
-        {%- for value in pkg.spm.dependencies %}
-        <script src="{{content_url('')}}{{value}}"></script>
-        {%- endfor %}
-        {%- for value in pkg.spm.devDependencies %}
-        <script src="{{content_url('')}}{{value}}"></script>
-        {%- endfor %}
-        <script src="{{content_url('')}}{{pkg.spm.main}}"></script>
         <div id="content">{% block content %}{% endblock %}</div>
     </div>
     {%- endblock %}
