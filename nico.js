@@ -38,10 +38,10 @@ exports.ignorefilter = function (filepath, subdir) {
     return true;
 }
 exports.writers = [
-    'nico.PageWriter',
-    'nico.StaticWriter',
-    'nico.FileWriter',
-    'nico.MochaWriter'
+    'xnico.PageWriter',
+    'xnico.StaticWriter',
+    'xnico.FileWriter',
+    'xnico.MochaWriter'
 ];
 // end settings }}
 
