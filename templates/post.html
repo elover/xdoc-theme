@@ -7,8 +7,8 @@
   <h1 class="entry-title">{{post.title}}</h1>
     <p class="entry-depend">
         依赖模块：
-        {%- for item in config.package.spm.dependencies %}
-            <a href="{{ item }}">{{  loop.key }}</a>
+        {%- for item in config.package.dependencies %}
+            <a target="_blank" href="/widget/{{loop.key}}/{{ item }}/_site/index.html">{{  loop.key }}</a>
         {%- endfor %}
     </p>
   <div class="entry-content">
