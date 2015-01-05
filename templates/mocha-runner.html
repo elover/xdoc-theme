@@ -7,16 +7,13 @@
     <link href="/static/bower_components/mocha/mocha.css" type="text/css" rel="stylesheet" charset="utf-8">
   </head>
   <body>
-    {%- include "snippet/head.html" %}
-    <script src=/static/js/jquery-1.11.0.js></script>
-    <script src=/static/js/handlebars.js></script>
-    <script src="/static/bower_components/mocha/mocha.js"></script>
-    <script src="/static/bower_components/sinon/sinon-1.12.2.js"></script>
-    <script src="/static/bower_components/expect/index.js"></script>
-    <script src=/static/js/require.js></script>
-    <!--[if lte IE 8]>
-    <!--<script src="{{config.assets_host}}/gallery/sinon/1.6.0/sinon-ie.js"></script>-->
-    <![endif]-->
+  <script src="/static/bower_components/mocha/mocha.js"></script>
+  <script src="/static/bower_components/sinon/sinon-1.12.2.js"></script>
+  <script src="/static/bower_components/expect/index.js"></script>
+  <!--[if lte IE 8]>
+  <!--<script src="{{config.assets_host}}/gallery/sinon/1.6.0/sinon-ie.js"></script>-->
+  <![endif]-->
+  {%- include "snippet/head.html" %}
     <div id="mocha"></div>
     <script>
       requirejs.config({

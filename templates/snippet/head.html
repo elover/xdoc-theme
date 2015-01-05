@@ -1,4 +1,19 @@
 
+<link type="image/x-icon" href=/static/css/favicon.ico rel="icon">
+<link rel="stylesheet" href=/static/css/normalize.css>
+<link rel="stylesheet" href=/static/css/site.css>
+<link rel="stylesheet" href=/static/css/solarized.css>
+<script src=/static/js/jquery-1.11.0.js></script>
+<script src=/static/js/handlebars.js></script>
+<script src=/static/js/require.js></script>
+<!--[if lt IE 9]>
+<script src=/static/js/html5shiv.js></script>
+<![endif]-->
+<script>
+    requirejs.config({
+        baseUrl: '/widget'
+    });
+</script>
 {%- set enginefiles = engines %}
 {%- set pkg = config.package %}
 
